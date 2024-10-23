@@ -1,0 +1,252 @@
+/*
+font-family: "Raleway", sans-serif;
+
+font-family: "Roboto", sans-serif;
+*/
+.bg-body-tertiary {
+    background-color: #a68069 !important;
+}
+
+footer {
+    background-color: #a68069;
+}
+
+.custom-instagram-icon {
+    color: black; /* El color que prefieras */
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 60px;
+}
+
+h2 {
+    margin-top: 20px;  /* Margen superior de 20px */
+    margin-bottom: 30px;  /* Margen inferior de 30px */
+    /* font-family: "Roboto", sans-serif; */
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-size: 50px;
+}
+
+h3 {
+    margin-top: 20px;  /* Margen superior de 20px */
+    margin-bottom: 30px;  /* Margen inferior de 30px */
+    font-family: "Raleway", sans-serif;
+    font-size: 40px;
+}
+
+h4 {
+    margin-top: 30px;  /* Margen superior de 20px */
+    margin-bottom: 20px;  /* Margen inferior de 30px */
+    font-family: "Raleway", sans-serif;
+    font-size: 27px;
+}
+
+p, ul {
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+}
+
+.logo-img {
+    height: 80px; /* Ajusta este valor al tamaño que quieras */
+    width: auto;  /* Mantiene la proporción original de la imagen */
+    object-fit: cover;  /* Recorta el logo para que ocupe el contenedor sin dejar espacio */
+    object-position: center;  /* Centra el logo dentro del contenedor */
+}
+
+
+.hero {
+    position: relative;
+    height: 70vh; /* Altura del contenedor hero */
+    min-height: 300px;
+    overflow: hidden; /* Asegura que nada se desborde del contenedor */
+}
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/portada_background.jpg) no-repeat center center;
+    background-size: cover;
+    filter: blur(8px); /* Difumina el fondo */
+    z-index: 1;
+}
+
+.foreground-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 50%; /* Ajusta el tamaño máximo de la imagen centrada */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    z-index: 2;
+    object-fit: contain; /* Mantiene las proporciones dentro del contenedor */
+}
+
+
+.staff-light-yellow {
+    background-color: #ffffeb;
+}
+
+.staff-light-green {
+    background-color: #6C7059;
+}
+
+.staff-light-brown {
+    background-color: #998C77;
+}
+
+.leter-color-light-yellow {
+    color: #ffffeb;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.balloon-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre los globos */
+    padding: 20px;
+    background-color: #ffffeb;
+    background-image: url('img/background.jpg'); /* Cambia la ruta a tu imagen */
+    background-size: cover; /* Para que cubra todo el contenedor */
+    background-position: center;
+    position: relative; /* Posiciona relativo al contenedor */
+}
+
+
+.balloon {
+    background-color: #D6C7A9; /* Color del globo */
+    border-radius: 50px; /* Bordes redondeados para crear la forma del globo */
+    padding: 20px;
+    width: 95%; /* Ancho del globo ajustado, usa un porcentaje o valor fijo */
+    text-align: center;
+    border: 2px solid #c3b091; /* Borde del globo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+.balloon p {
+    margin: 0; /* Elimina el margen de los párrafos dentro del globo */
+    color: #333;
+    font-family: "Arial", sans-serif;
+}
+
+/* Para alternar la alineación en zigzag */
+.zigzag-left {
+    align-self: flex-start; /* Alinea los globos hacia la izquierda */
+}
+
+.zigzag-right {
+    align-self: flex-end; /* Alinea los globos hacia la derecha */
+}
+
+/* Solo aplica la eliminación de bullets y los iconos de check y cruz a la lista con la clase .check-list */
+.check-list {
+    list-style: none; /* Elimina los bullets solo en esta lista */
+    padding-left: 0; /* Elimina la indentación */
+}
+
+.check-list li {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.check-list li.check::before {
+    content: "\2714"; /* Check: ✓ */
+    color: green;
+    margin-right: 10px;
+}
+
+.check-list li.cross::before {
+    content: "\2716"; /* Cruz: ✘ */
+    color: red;
+    margin-right: 10px;
+}
+
+p.cierre{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+
+.scroll_section {
+    scroll-margin-top: 60px;
+}
+
+.carousel-inner {
+    text-align: center;
+    /* Centra el contenido del carrusel, incluyendo imágenes y texto */
+    padding-bottom: 30px;
+    /* Ajusta el valor según lo necesites */
+}
+
+.carousel-inner img {
+    width: 50% !important;
+    /* Sobrescribe el w-100 */
+    height: auto;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.carousel-inner p {
+    text-align: center;
+    /* Centra el texto dentro de los párrafos */
+    font-style: italic;
+    /* Opcional, mantiene el estilo cursiva si lo necesitas */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    margin-top: -1px;
+    /* Ajusta este valor según tus necesidades */
+    background-color: #5b4636;
+    /* Cambia el color del fondo de las flechas */
+}
+
+.carousel-indicators button {
+    background-color: #ddc1a7 !important;
+}
+
+.carousel-indicators button.active {
+    background-color: #5b4636 !important;
+    /* Marrón más oscuro para el botón activo */
+}
+
+.form-container {
+    background-color: #ffffeb; /* Cambia el color a blanco u otro color deseado */
+    color:#333
+}
+
+.custom-btn {
+    background-color: #6C7059; /* Color verde personalizado */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.custom-btn:hover {
+    background-color: #484B3D; /* Color cuando haces hover */
+    color: white; /* Color del texto cuando haces hover */
+}
+
+.custom-margin {
+    margin-top: 6rem; /* o cualquier valor mayor */
+    background-color:#ffffeb;
+}
+
+.custom-margin-trascendidos {
+    margin-left: 9rem; /* o cualquier valor mayor */
+    background-color:#6C7059;
+
+}
