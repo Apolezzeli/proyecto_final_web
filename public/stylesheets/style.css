@@ -65,7 +65,7 @@ p, ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(../img/portada_background.jpg) no-repeat center center;
+    background: url(../images/portada_background.jpg) no-repeat center center;
     background-size: cover;
     filter: blur(8px); /* Difumina el fondo */
     z-index: 1;
@@ -110,7 +110,7 @@ html {
     gap: 20px; /* Espacio entre los globos */
     padding: 20px;
     background-color: #ffffeb;
-    background-image: url('img/background.jpg'); /* Cambia la ruta a tu imagen */
+    background-image: url('images/background.jpg'); /* Cambia la ruta a tu imagen */
     background-size: cover; /* Para que cubra todo el contenedor */
     background-position: center;
     position: relative; /* Posiciona relativo al contenedor */
