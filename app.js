@@ -6,8 +6,16 @@ var logger = require('morgan');
 
 require('dotenv').config();
 
+var session = require('express-session');
+
+var pool = require('./models/bd');
+
 var indexRouter = require('./routes/index');
 var masRouter = require('./routes/mas');
+var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/novedades')
+
+const { nextTick } = require('process');
 
 var app = express();
 
@@ -21,16 +29,42 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'A1b2c3d4E5f6g7h8i9J0',
+  resave: false,
+  saveUninitialized: true,
+}))
+
+secured = async (req, res, next) => {
+  try {
+    console.log(req.session.id_usuario);
+    if (req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect('/admin/login');
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 app.use('/', indexRouter);
 app.use('/mas', masRouter);
+app.use('/admin/login', loginRouter);
+app.use('/admin/novedades', secured, adminRouter);
+
+// comprobacion de conexion BD con select
+pool.query('select * from usuarios').then(function (resultados) {
+  console.log(resultados)
+});
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -39,5 +73,15 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// manejador para rutas desconocidas
+app.use((req, res, next) => {
+    res.status(404).send("Route not found");
+});
+
+
+
+
+
 
 module.exports = app;

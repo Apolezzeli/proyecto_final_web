@@ -1,7 +1,6 @@
 var express = require('express');
-const req = require('express/lib/request');
 var router = express.Router();
-
+const req = require('express/lib/request');
 var nodemailer = require('nodemailer');
 
 /* GET home page. */
