@@ -310,3 +310,51 @@ p.cierre {
     background-color: #6C7059;
 
 }
+
+/* Estilos para la lista de novedades */
+.lista-novedades a {
+    color: #333; /* Cambia #333 por el color que prefieras */
+    text-decoration: none; /* Quita el subrayado */
+}
+
+.lista-novedades a:hover {
+    color: #666; /* Cambia #666 por el color que prefieras al pasar el mouse */
+    text-decoration: underline; /* Opcional: puedes poner subrayado al hover */
+}
+
+.lista-novedades li {
+    list-style-type: circle;    /* círculo abierto */
+    /* Otros valores posibles: square, disc, decimal, lower-alpha, upper-roman, etc. */
+}
+
+.tabla-novedades {
+    list-style: none; /* Quita los puntos de lista */
+    padding: 0;
+    margin: 0;
+}
+
+.tabla-novedades li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
+}
+
+.tabla-novedades li:last-child {
+    border-bottom: none; /* Elimina la línea de la última fila */
+}
+
+.titulo {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subtitulo {
+    font-size: 1em;
+    color: #555; /* Color de subtítulo */
+    margin: 5px 0;
+}
+
+.cuerpo {
+    font-size: 0.9em;
+    color: #333; /* Color de texto del cuerpo */
+}

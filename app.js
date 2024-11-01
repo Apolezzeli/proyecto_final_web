@@ -11,7 +11,7 @@ var session = require('express-session');
 var pool = require('./models/bd');
 
 var indexRouter = require('./routes/index');
-var masRouter = require('./routes/mas');
+var masRouter = require('./routes/blog');
 var loginRouter = require('./routes/admin/login');
 var adminRouter = require('./routes/admin/novedades')
 
@@ -49,7 +49,7 @@ secured = async (req, res, next) => {
 }
 
 app.use('/', indexRouter);
-app.use('/mas', masRouter);
+app.use('/blog', masRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
 

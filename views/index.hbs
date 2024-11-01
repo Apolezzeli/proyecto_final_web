@@ -460,7 +460,7 @@
     </div>
 </div>
 
-<div id="mas" class="row align-items-center scroll_section staff-light-brown leter-color-light-yellow">
+<div id="blog" class="row align-items-center scroll_section staff-light-brown leter-color-light-yellow">
     <div class="col-lg-1">
     </div>
     <div class="row justify-content-center" style="padding-top: 50px;">
@@ -473,7 +473,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Breve Historia de la Comunicación Telepática entre Especies</h5>
                     <p class="card-text">Spoiler: Los seres humanos somos animales.</p>
-                    <a href="/mas#Breve Historia" class="btn btn-primary custom-btn">Seguir Leyendo</a>
+                    <a href="/blog#Breve Historia" class="btn btn-primary custom-btn">Seguir Leyendo</a>
                 </div>
             </div>
         </div>
@@ -486,21 +486,22 @@
                 <div class="card-body">
                     <h5 class="card-title">Código de Ética para la Comunicación Telepática entre Especies</h5>
                     <p class="card-text">Formulado por Penelope Smith en el año 1990.</p>
-                    <a href="/mas#Etica" class="btn btn-primary custom-btn">Seguir Leyendo</a>
+                    <a href="/blog#Etica" class="btn btn-primary custom-btn">Seguir Leyendo</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row my-3 row align-items-center staff-light-yellow py-4 scroll_section">
-    <div id="novedades" class="col-md-5 offset-md-2 scroll_section">
+<div id="novedades" class="row my-3 row align-items-center staff-light-yellow py-4 scroll_section">
+    <div class="col-md-6 mx-auto text-center scroll_section">
         <h2>Novedades</h2>
-        <ul class="lista-novedades">
+        <ul class="tabla-novedades lista-novedades">
             {{#each novedades}}
             <li>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}">
-                    <img src="" {{titulo}} alt="">
+                <a href="/admin/novedades" data-bs-toggle="modal" data-bs-target="#Modal{{id}}">
+                    <h4>{{titulo}}</h4>
+                    <p>{{subtitulo}}</p>
                 </a>
             </li>
             {{/each}}
@@ -508,24 +509,26 @@
     </div>
 
     {{#each novedades}}
-    {{!-- inicia modal --}}
+    <!-- inicia modal -->
     <div class="modal fade" id="Modal{{id}}" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">{{titulo}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h2>{{titulo}}</h2>
-                <h3>{{subtitulo}}</h3>
-                <p>{{cuerpo}}</p>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">{{titulo}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2>{{titulo}}</h2>
+                    <h3>{{subtitulo}}</h3>
+                    <p>{{cuerpo}}</p>
+                </div>
             </div>
         </div>
-        {{/each}}
     </div>
+    {{/each}}
 </div>
 
 <div class="container-fluid">
