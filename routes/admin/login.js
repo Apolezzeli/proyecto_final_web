@@ -10,6 +10,14 @@ router.get('/', function (req, res, next) {
   });
 });
 
+// destruye variables de sesion
+router.get('/logout', function (req, res, next) {
+  req.session.destroy();
+  res.render('admin/login', {
+    layout: 'admin/layout'
+  });
+});
+
 router.post('/', async (req, res, next) => {
   try {
     console.log(req.body)
@@ -34,13 +42,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-// destruye variables de sesion
-router.get('/logout', function (req, res, next) {
-  req.session.destroy();
-  res.render('admin/login', {
-    layout: 'admin/layout'
-  });
-});
+
 
 
 module.exports = router;
